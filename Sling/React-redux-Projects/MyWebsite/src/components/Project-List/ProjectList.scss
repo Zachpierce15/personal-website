@@ -1,0 +1,17 @@
+.project-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #1f2833;
+  border: 3px solid black;
+  border-radius: 8px;
+  color: white;
+  font-size: x-large;
+  height: fit-content;
+  justify-content: center;
+  margin: 33px;
+}
+
+.project-header {
+  width: fit-content;
+  margin-left: 20px;
+}

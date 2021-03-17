@@ -1,0 +1,41 @@
+.about-me {
+    display: flex;
+  }
+
+  .title-of-about-me {
+    text-align: center;
+  }
+
+  .sub-title {
+    text-align: center;
+  }
+
+  .header-of-about-me {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .about-me-bubble {
+      background-color: #1f2833;
+      border: 3px solid black;
+      border-radius: 8px;
+      color: white;
+      font-size: x-large;
+      height: 800px;
+      justify-content: center;
+      margin: 33px;
+      overflow-y: auto;
+  }
+  .about-me-bubble::-webkit-scrollbar {
+    display: none;
+  }
+
+  p {
+    margin: 15px;
+    color: #c8c8c8;
+
+    span {
+      font-weight: 400;
+    }
+  }

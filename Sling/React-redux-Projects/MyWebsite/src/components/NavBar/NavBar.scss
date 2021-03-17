@@ -1,0 +1,35 @@
+.website-name {
+    border-radius: 10px;
+    font-size: -webkit-xxx-large;
+    margin: 5px 0px;
+    padding: 0px 5px;
+    color: #45a29e;
+    pointer-events: none;
+}
+
+.header_main {
+    background-color: #0b0c10;
+    border-bottom: 1px solid black;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 65px;
+    text-align: center;
+  }
+
+  .nav-options {
+    border-radius: 9px;
+    color: #c5c6c7;
+    cursor: pointer;
+    font-size: x-large;
+    margin-top: 10px;
+    max-height: 31px;
+    padding: 6px 14px;
+    transition: all 0.8 ease 0s;
+
+    &:hover {
+      background-color: #45a29e;
+      transform: scale(1.1);
+      transition: transform 200ms ease-in;
+      }
+  }
