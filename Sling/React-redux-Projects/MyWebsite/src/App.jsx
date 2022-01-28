@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import {addImages} from './features/home/homeSlice';
-import axios from 'axios';
 import reducers from './reducers';
 import Home from './components/Home/Home';
 import Introduction from './components/Introduction/Introduction';

@@ -67,10 +67,6 @@ text-align: center;
     text-decoration: underline;
 `;
  
-const HighlightedText = styled.span`
-    font-weight: 400;
-`;
-
 const StyledContentImage = styled.img`
 
 `;
