@@ -1,49 +1,76 @@
 import React from 'react';
+import styled from 'styled-components';
+import {useSelector} from 'react-redux';
 
 import './Home.scss';
 
-function Home(props) {
+function Home() {
+    const headerImage = useSelector((state) => state.images.payload ? state.images.payload[4] : {});
+    const contentImage = useSelector((state) => state.images.payload ? state.images.payload[0] : {});
 
     return (
-        <div className="container">
-            <div className="home-bubble">
+        <StyledContainer>
+            <StyledHeaderImage src={headerImage?.src?.large2x} alt={headerImage.alt}/>
+            <StyledContentImage src={contentImage?.src?.medium} alt={contentImage.alt} />
+            <HomeContentContainer>
 
-                <div className="home-header">
+                <HomeHeaderContainer>
                     <h1>~ Zachary Pierce ~</h1>
-                </div>
+                </HomeHeaderContainer>
 
-                <p>
-                    I am a <span className="highlight"> Software Engineer</span>
-                </p>
-
-                <p>
-                    This website has been created using
-                    <span className="highlight"> ReactJS </span>
-                    and
-                    <span className="highlight"> SCSS</span>.
-                </p>
-
-                <p>
-                    Using
-                    <span className="highlight"> functional components </span>
-                    and
-                    <span className="highlight"> React hooks </span>
-                     I was able to create a responsive personal webpage to showcase my skills as a Software Engineer.
-                </p>
-
-                <p>
-                    Part of this website includes a list of projects that I have completed on my own time.
-                    They each will show off different skills that I have gained over the course of my career.
-                </p>
-
-                <p>
-                    My hope would be that you would have fun playing with these projects while also gaining an understanding that I am a capable engineer.
-                </p>
-            </div>
-            <div className="home-intro">
-            </div>
-        </div>
+            </HomeContentContainer>
+        </StyledContainer>
     )
 }
 
 export default Home
+
+const StyledContainer = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 64px 0;
+`;
+
+const StyledHeaderImage = styled.img`
+    width: -webkit-fill-available;
+`;
+
+const HomeContentContainer = styled.div`
+    background-color: #1f2833;
+    border-radius: 10px;
+    color: #c5c6c7;
+    padding: 10px;
+    height: fit-content;
+    width: 100%;
+    max-width: 600px;
+
+    p {
+        margin: 32px;
+        color: #45a29e;
+        font-size: x-large;
+        margin: 15px;
+        text-align: -webkit-center;
+        font-weight: 200;
+    }
+
+    @media(max-width: 990px) {
+        overflow-y: auto;
+    }
+    @media (max-width: 480px) {
+        width: auto;
+    }
+`;
+
+const HomeHeaderContainer = styled.div`
+text-align: center;
+    text-decoration: underline;
+`;
+ 
+const HighlightedText = styled.span`
+    font-weight: 400;
+`;
+
+const StyledContentImage = styled.img`
+
+`;
