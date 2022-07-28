@@ -25,12 +25,13 @@ function App() {
       }).then((resp) => {
         return resp.json();
       }).then(data => {  
-        console.log(data);
           const action = {
             payload: data.media,
           }
           dispatch(addImages(action));  
-      }) 
+      }).catch((error) => {
+        console.log('Error',error);
+      })
   },[dispatch]);
 
   return (

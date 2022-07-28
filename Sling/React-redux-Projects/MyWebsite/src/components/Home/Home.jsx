@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {useSelector} from 'react-redux';
 
-import './Home.scss';
-
 function Home() {
     const headerImage = useSelector((state) => state.images.payload ? state.images.payload[4] : {});
     const contentImage = useSelector((state) => state.images.payload ? state.images.payload[0] : {});
@@ -26,14 +24,17 @@ function Home() {
 export default Home
 
 const StyledContainer = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 64px 0;
+    display: grid;
+    grid-template-areas:
+    'headerImage headerImage'
+    'pageContent pageContent';
+    margin: 0 0 64px 0;
 `;
 
 const StyledHeaderImage = styled.img`
     width: -webkit-fill-available;
+    z-index: 0;
+    grid-area: headerImage;
 `;
 
 const HomeContentContainer = styled.div`
@@ -44,6 +45,8 @@ const HomeContentContainer = styled.div`
     height: fit-content;
     width: 100%;
     max-width: 600px;
+    z-index: 1;
+    grid-area: pageContent;
 
     p {
         margin: 32px;
@@ -63,10 +66,9 @@ const HomeContentContainer = styled.div`
 `;
 
 const HomeHeaderContainer = styled.div`
-text-align: center;
+    text-align: center;
     text-decoration: underline;
 `;
  
 const StyledContentImage = styled.img`
-
 `;

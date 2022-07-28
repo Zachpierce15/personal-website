@@ -7,7 +7,7 @@ function NavBar(props) {
 
     return (
         <div className="header_main">
-            <span className="website-name">Good Things</span>
+            <span className="website-name">Zach Pierce</span>
             <span className="nav-options" onClick={() => setTab('Home')}>
                 Home
             </span>
